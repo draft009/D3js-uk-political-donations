@@ -1,4 +1,5 @@
-// GLOBALS
+// GLOBALS\
+var music=new Audio ("button.mp3");
 var w = 1000,h = 900;
 var padding = 2;
 var nodes = [];
