@@ -373,6 +373,12 @@ function mouseover(d, i) {
 	
 	}
 
+	mosie.classed("active", true);
+	d3.select(".tooltip")
+  	.style("left", (parseInt(d3.select(this).attr("cx") - 80) + offset.left) + "px")
+ 	.style("top", (parseInt(d3.select(this).attr("cy") - (d.radius+150)) + offset.top) + "px")
+		.html(infoBox)
+			.style("display","block");
 	
 	// PARADOTEO 2
 		var infoPic = document.createElement("img");
