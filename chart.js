@@ -327,19 +327,32 @@ function mouseover(d, i) {
 	var entity = d.entityLabel;
 	var offset = $("svg").offset();
 	
+	// paradoteo 2
+	function mouseover(d, i) {
+	// tooltip popup
+	var mosie = d3.select(this);
+	var amount = mosie.attr("amount");
+	var donor = d.donor;
+	var party = d.partyLabel;
+	var entity = d.entityLabel;
+	var offset = $("svg").offset();
+		
+	// tooltip popup
+	var mosie = d3.select(this);
+	var amount = mosie.attr("amount");
+	var donor = d.donor;
+	var party = d.partyLabel;
+	var entity = d.entityLabel;
+	var offset = $("svg").offset();
+	var infoBox = "<p> Source: <b>" + donor + "</b></p>"
+								+ "<p> Recipient: <b>" + party + "</b></p>"
+								+ "<p> Type of donor: <b>" + entity + "</b></p>"
+								+ "<p> Total value: <b>&#163;" + comma(amount) + "</b></p>";
 
 
 	// image url that want to check
 	var imageFile = "https://raw.githubusercontent.com/ioniodi/D3js-uk-political-donations/master/photos/" + donor + ".ico";
 
-	
-	
-	// *******************************************
-	
-	
-	
-
-	
 
 	
 	var infoBox = "<p> Source: <b>" + donor + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
@@ -358,7 +371,18 @@ function mouseover(d, i) {
 	var message = new SpeechSynthesisUtterance("The donator is " + donor + " and the amount that he gave is " + amount + " british pounds");
     window.speechSynthesis.speak(message);
 	
+	}
+
 	
+	// PARADOTEO 2
+		var infoPic = document.createElement("img");
+                     infoPic.setAttribute("src","http://www.bizreport.com/2011/02/03/android-logo-200x200.jpg");
+                     infoPic.setAttribute("height","42");
+                     infoPic.setAttribute("width","42");
+                     infoPic.setAttribute("onerror",'this.src=\"https://github.com/favicon.ico\";');
+               document.getElementById("cssPic").insertBefore(infoPic,document.getElementById("cssPic").firstChild);
+               infoPic.src = imageFile;
+		
 	}
 
 function mouseout() {
